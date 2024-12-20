@@ -70,6 +70,7 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = "users.User"
 WSGI_APPLICATION = "planflow.wsgi.application"
 
 

@@ -25,17 +25,17 @@ class Project(models.Model):
     ]
 
     # Fields
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=72)
     description = models.TextField(blank=True)
     start_date = models.DateField()
     end_date = models.DateField()
     priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default=MEDIUM)
-    category = models.CharField(max_length=100)
+    category = models.CharField(max_length=32)
     status = models.CharField(
         max_length=15, choices=STATUS_CHOICES, default=NOT_STARTED
     )
     image_urls = models.JSONField(default=list, blank=True)
-    user = models.ForeignKey(
+    owner = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="projects"
     )
 

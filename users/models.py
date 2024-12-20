@@ -6,7 +6,7 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=64, blank=False)
     last_name = models.CharField(max_length=64, blank=False)
     email = models.EmailField(unique=True)
-    profile_picture = models.ImageField(null=True, blank=True)
+    profile_picture = models.URLField(max_length=500, blank=True, null=True)
     is_verified = models.BooleanField(default=False)
 
     def __str__(self):

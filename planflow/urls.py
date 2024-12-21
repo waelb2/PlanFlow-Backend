@@ -22,4 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/auth/", include("users.urls")),  # including auth paths
     path("api/projects/", include("projects.urls")),  # including projects paths
+    path("api/ai/", include("ai_integrations.urls")),  # including ai paths
 ]
